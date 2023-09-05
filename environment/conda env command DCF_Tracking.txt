@@ -1,0 +1,63 @@
+########## Creation command ############
+conda create --name DCF_Tracking python=3.9
+conda activate DCF_Tracking
+conda install bs4==4.9.2 requests pandas pandas openpyxl xlwings pyodbc spyder jupyterlab nb_conda_kernels pylint pyinstaller black mypy
+
+conda list --explicit > C:\TEMP\DCF_Tracking_specfile.txt
+conda env export > C:\TEMP\DCF_Tracking_FULL.yml
+conda env export --from-history > C:\TEMP\DCF_Tracking.yml
+
+
+########## Install command ############
+conda create --name DCF_Tracking --file DCF_Tracking_specfile-file.txt
+
+conda env create --name DCF_Tracking --file=C:\TEMP\DCF_Tracking.yml
+
+########### Related Commands  ##########
+conda config --append channels conda-forge
+
+conda activate DCF_Tracking
+
+
+#### Primary Packages ####
+python >= 3.9
+networkx
+pygraphviz
+pydot
+pandas
+openpyxl
+matplotlib
+xlwings
+pyodbc
+spyder
+jupyterlab
+nb_conda_kernels
+pysimplegui
+pylint
+pyinstaller
+black
+mypy
+
+########## Jupyter Lab Launch ############
+C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3\envs\DCF_Tracking C:\ProgramData\Anaconda3\envs\DCF_Tracking\python.exe C:\ProgramData\Anaconda3\envs\DCF_Tracking\Scripts\jupyter-lab-script.py "Z:\Treatment Planning System\DCF Monitoring and Configuration"
+
+"Z:\Treatment Planning System\DCF Monitoring and Configuration"
+%ALLUSERSPROFILE%\Anaconda3\Menu\jupyter.ico
+
+########## Visual Studio Code Launch ############
+CALL C:\ProgramData\Anaconda3\Scripts\activate.bat C:\ProgramData\Anaconda3
+CALL conda activate DCF_Tracking
+Cd "Z:\Treatment Planning System\DCF Monitoring and Configuration"
+Z:
+code .
+########## Spyder Launch ############
+C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3\envs\DCF_Tracking C:\ProgramData\Anaconda3\envs\DCF_Tracking\python.exe C:\ProgramData\Anaconda3\envs\DCF_Tracking\Scripts\spyder-script.py "Z:\Treatment Planning System\DCF Monitoring and Configuration"
+
+"Z:\Treatment Planning System\DCF Monitoring and Configuration"
+
+
+#### xlwings addin ####
+xlwings addin install --unprotected
+
+xlwings quickstart myproject.
+

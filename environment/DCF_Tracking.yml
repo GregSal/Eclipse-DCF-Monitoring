@@ -1,0 +1,19 @@
+name: DCF_Tracking
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - bs4==4.9.2
+  - requests
+  - pandas
+  - xlwings
+  - spyder
+  - mypy
+  - nb_conda_kernels
+  - pyinstaller
+  - jupyterlab
+  - pylint
+  - pyodbc
+  - black
+  - openpyxl
+prefix: C:\ProgramData\Anaconda3\envs\DCF_Tracking
