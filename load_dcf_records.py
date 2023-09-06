@@ -555,6 +555,46 @@ def load_dcf_execution(time_span='Week', table_name='HistorySummary'):
     return calc_history
 
 
+def load_dcf_services(time_span='Week'):
+    '''Query the available DCF algorithm services and extract the results.
+    Keyword Arguments:
+        time_span {str} -- The time span (where applicable) to use for
+            modifying the table query.  (default: {'Week'})
+    Returns:
+        pd.DataFrame -- The requested data as a DataFrame.
+'''
+    table_name='ServiceNames'
+    # Name conversion for Execution history data columns
+    column_names = {
+        'Algorithm': 'Algorithm',
+        'Calculation': 'Calculation',
+        'Version': 'Version',
+        'Agents': 'AgentCount',
+        'Clients': 'ClientCount',
+        'Calls in progress': 'ActiveJobs',
+        'Calls waiting': 'WaitingJobs'
+        }
+    # Split Service name into three parts  Algorithm, Calculation, Version
+    text_settings = [
+        TextParse('Algorithm', token='.', keep_split=0, max_splits=1),
+        TextParse('Calculation', token='.', keep_split=1, max_splits=2),
+        TextParse('Version', token='.', keep_split=2, max_splits=2),
+        TextParse('Version', token='x', keep_split=0, max_splits=1, right=True)
+        ]
+    # Read in the data
+    dcf_table = get_dcf_table(time=time_span, query=table_name)
+    dcf_services = parse_dcf_query(dcf_table)
+
+    # Clean the data
+    dcf_services['Algorithm'] = dcf_services['Service name']
+    dcf_services['Calculation'] = dcf_services['Service name']
+    dcf_services['Version'] = dcf_services['Service name']
+    dcf_services = trim_text(dcf_services, text_settings)
+    dcf_services.rename(columns=column_names, inplace=True)
+    column_order = list(column_names.values())
+    return dcf_services[column_order]
+
+
 def load_dcf_status(table_name='Agents'):
     '''Query the DCF status logs and extract the requested table.
     Keyword Arguments:
