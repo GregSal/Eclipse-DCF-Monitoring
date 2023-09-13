@@ -1,7 +1,0 @@
-Agent,Client,Algorithm,Job_Id,WaitTime,Duration,Event,Time,new_job,job_count
-varfaspr7,p9584@ctx7-aria15-pv5,AAA,0,0.016,0.0,StartTime,2023-09-06 07:45:19.885,1,1
-varfaspr7,p9584@ctx7-aria15-pv5,AAA,0,0.016,0.0,EndTime,2023-09-06 07:45:19.885,-1,0
-varfaspr11,p9584@ctx7-aria15-pv5,AAA,0,0.031,0.0,StartTime,2023-09-06 07:45:19.916,1,1
-varfaspr11,p9584@ctx7-aria15-pv5,AAA,0,0.031,0.0,EndTime,2023-09-06 07:45:19.916,-1,0
-varfaspr6,p9584@ctx7-aria15-pv5,AAA,0,0.016,0.0,StartTime,2023-09-06 07:45:19.932,1,1
-varfaspr6,p9584@ctx7-aria15-pv5,AAA,0,0.016,0.0,EndTime,2023-09-06 07:45:19.932,-1,0
