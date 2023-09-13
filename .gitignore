@@ -200,3 +200,5 @@ environment/Jupyter Lab (DCF_Tracking).lnk
 environment/Jupyter Lab (SQL Graphs).bat
 environment/Spyder (DCF_Tracking).lnk
 environment/VS Code (DCF_Tracking).bat
+*.csv
+*.bat
