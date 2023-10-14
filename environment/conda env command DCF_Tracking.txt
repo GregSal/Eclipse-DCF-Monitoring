@@ -1,11 +1,12 @@
 ########## Creation command ############
 conda create --name DCF_Tracking python=3.9
 conda activate DCF_Tracking
-conda install bs4==4.9.2 requests pandas pandas openpyxl xlwings pyodbc spyder jupyterlab nb_conda_kernels pylint pyinstaller black mypy
+conda install -y bs4==4.9.2 requests pandas openpyxl xlwings
+conda install spyder jupyterlab nb_conda_kernels pylint
 
-conda list --explicit > C:\TEMP\DCF_Tracking_specfile.txt
-conda env export > C:\TEMP\DCF_Tracking_FULL.yml
-conda env export --from-history > C:\TEMP\DCF_Tracking.yml
+conda list --explicit > %TEMP%\DCF_Tracking_specfile.txt
+conda env export > %TEMP%\DCF_Tracking_FULL.yml
+conda env export --from-history > %TEMP%\DCF_Tracking.yml
 
 
 ########## Install command ############
@@ -21,43 +22,40 @@ conda activate DCF_Tracking
 
 #### Primary Packages ####
 python >= 3.9
-networkx
-pygraphviz
-pydot
 pandas
 openpyxl
-matplotlib
 xlwings
-pyodbc
+requests
+bs4==4.9.2
+
+#### Dev Packages ####
 spyder
 jupyterlab
 nb_conda_kernels
-pysimplegui
 pylint
-pyinstaller
-black
-mypy
 
+########## Relevant Paths ############
+CONDA_PYTHON_EXE=C:\ProgramData\Anaconda3\python.exe
+CONDA_PREFIX=C:\ProgramData\Anaconda3\envs\DCF_Tracking
+CONDA_PREFIX_1=C:\ProgramData\Anaconda3
+ComSpec=C:\WINDOWS\system32\cmd.exe
+TEMP=C:\Temp
+PROJECT_PATH="Z:\Treatment Planning System\DCF Monitoring and Configuration"
 ########## Jupyter Lab Launch ############
-C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3\envs\DCF_Tracking C:\ProgramData\Anaconda3\envs\DCF_Tracking\python.exe C:\ProgramData\Anaconda3\envs\DCF_Tracking\Scripts\jupyter-lab-script.py "Z:\Treatment Planning System\DCF Monitoring and Configuration"
+%CONDA_PYTHON_EXE% %CONDA_PREFIX_1%\cwp.py %CONDA_PREFIX% %CONDA_PREFIX%\python.exe %CONDA_PREFIX%\Scripts\jupyter-lab-script.py %PROJECT_PATH%
 
-"Z:\Treatment Planning System\DCF Monitoring and Configuration"
-%ALLUSERSPROFILE%\Anaconda3\Menu\jupyter.ico
+Start_in=%PROJECT_PATH%
+ICON=%ALLUSERSPROFILE%\Anaconda3\Menu\jupyter.ico
 
 ########## Visual Studio Code Launch ############
 CALL C:\ProgramData\Anaconda3\Scripts\activate.bat C:\ProgramData\Anaconda3
 CALL conda activate DCF_Tracking
-Cd "Z:\Treatment Planning System\DCF Monitoring and Configuration"
+CD %PROJECT_PATH%
 Z:
 code .
 ########## Spyder Launch ############
-C:\ProgramData\Anaconda3\python.exe C:\ProgramData\Anaconda3\cwp.py C:\ProgramData\Anaconda3\envs\DCF_Tracking C:\ProgramData\Anaconda3\envs\DCF_Tracking\python.exe C:\ProgramData\Anaconda3\envs\DCF_Tracking\Scripts\spyder-script.py "Z:\Treatment Planning System\DCF Monitoring and Configuration"
+%CONDA_PYTHON_EXE% %CONDA_PREFIX_1%\cwp.py %CONDA_PREFIX% %CONDA_PREFIX%\python.exe %CONDA_PREFIX%\Scripts\spyder-script.py %PROJECT_PATH%
 
-"Z:\Treatment Planning System\DCF Monitoring and Configuration"
-
-
-#### xlwings addin ####
-xlwings addin install --unprotected
-
-xlwings quickstart myproject.
+Start_in=%PROJECT_PATH%
+ICON=%ALLUSERSPROFILE%\Anaconda3\Menu\spyder.ico"
 
