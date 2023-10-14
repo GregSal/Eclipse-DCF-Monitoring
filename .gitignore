@@ -194,7 +194,8 @@ __pycache__
 tmp
 /misc
 Old Code
-requirements.txt
 *.csv
 *.bat
 *.lnk
+References/
+Data/
