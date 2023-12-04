@@ -20,7 +20,7 @@ status_file = work_path / dcf_path / DCF_status_file_name
 
 # %% Add History records to __.csv__ file
 # time_span options are: All, Month, Week, Day, Hour, Now
-calc_history = load_dcf_history(time_span='Day', table_name='History')
+calc_history = load_dcf_history(time_span='All', table_name='History')
 calc_history.to_csv(DCF_history_file, mode='a',header=False, index=False)
 
 # Remove duplicates from the cumulative record
